@@ -15,10 +15,17 @@ namespace PersonalWebSiteMVC.Data.Context
 
         }
 
-        public DbSet<Page> Pages { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Talent> Talents { get; set; }
         public DbSet<Image> Images { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Education> Educations { get; set; }
+        public DbSet<Experience> Experiences { get; set; }
+        public DbSet<Portfolio> Portfolios { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Summary> Summaries { get; set; }
+        public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
