@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PersonalWebSiteMVC.Data\PersonalWebSiteMVC.Data.csproj" />
+    <ProjectReference Include="..\PersonalWebSiteMVC.Service\PersonalWebSiteMVC.Service.csproj" />
   </ItemGroup>
 
 </Project>

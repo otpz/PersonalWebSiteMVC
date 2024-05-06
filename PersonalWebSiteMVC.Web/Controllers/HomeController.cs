@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PersonalWebSiteMVC.Service.Services.Abstractions;
 using PersonalWebSiteMVC.Web.Models;
 using System.Diagnostics;
 
@@ -7,15 +8,19 @@ namespace PersonalWebSiteMVC.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IUserService userService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IUserService userService)
         {
             _logger = logger;
+            this.userService = userService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var users = await userService.GetAllUserAsync();
+
+            return View(users);
         }
 
         public IActionResult Privacy()
