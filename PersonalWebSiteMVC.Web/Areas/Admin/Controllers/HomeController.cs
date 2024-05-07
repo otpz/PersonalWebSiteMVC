@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PersonalWebSiteMVC.Service.Services.Abstractions;
 
 namespace PersonalWebSiteMVC.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "SuperAdmin")]
     public class HomeController : Controller
     {
         private readonly IUserService userService;

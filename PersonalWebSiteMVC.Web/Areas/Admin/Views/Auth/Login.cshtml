@@ -65,7 +65,6 @@
                 </a>
               </div><!-- End Logo -->
 
-
               <div class="card mb-3">
 
                 <div class="card-body">
@@ -75,24 +74,24 @@
                     <p class="text-center small">Giriş yapmak için e-mail ve şifrenizi girin</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
-
+                  <form class="row g-3 needs-validation" method="post" asp-area="Admin" asp-controller="Auth" asp-action="Login">
+                    <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="col-12">
                       <label asp-for="Email" class="form-label">E-mail</label>
                       <div class="input-group has-validation">
                         <input asp-for="Email" type="text" name="Email" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Lütfen e-mail adresinizi giriniz.</div>
+                        <span asp-validation-for="Email"></span>
                       </div>
                     </div>
-
+                    
                     <div class="col-12">
                       <label asp-for="Password" class="form-label">Şifre</label>
                       <input asp-for="Password" type="password" name="Password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Lütfen şifrenizi giriniz</div>
+                      <span asp-validation-for="Email"></span>
                     </div>
 
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Giriş yap</button>
+                    <div class="col-12 mt-3">
+                        <button class="btn btn-primary w-100 mt-3" type="submit">Giriş yap</button>
                     </div>
                     <div class="col-12">
                     </div>
