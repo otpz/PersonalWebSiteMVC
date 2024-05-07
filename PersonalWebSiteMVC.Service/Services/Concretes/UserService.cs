@@ -19,18 +19,17 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
 
         public async Task<List<UserViewModel>> GetAllUserAsync()
         {
-            var users = await unitOfWork.GetRepository<User>().GetAllAsync();
+            var users = await unitOfWork.GetRepository<AppUser>().GetAllAsync();
             var map = mapper.Map<List<UserViewModel>>(users);
             return map;
         }
 
         public async Task<UserViewModel> GetFirstUserAsync(int id)
         {
-            var users = await unitOfWork.GetRepository<User>().GetByIdAsync(id);
+            var users = await unitOfWork.GetRepository<AppUser>().GetByIdAsync(id);
             var map = mapper.Map<UserViewModel>(users);
             return map;
         }
-
 
     }
 }

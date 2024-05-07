@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using PersonalWebSiteMVC.Entity.Entities;
 using System.Reflection;
 
 namespace PersonalWebSiteMVC.Data.Context
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser, AppRole, int, AppUserClaim, AppUserRole, AppUserLogin, AppRoleClaim, AppUserToken>
     {
         public AppDbContext()
         {
@@ -25,11 +26,11 @@ namespace PersonalWebSiteMVC.Data.Context
         public DbSet<Service> Services { get; set; }
         public DbSet<Summary> Summaries { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<AppUser> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
 
             // Tüm mappingler için yapılan config'leri uygula | IEntityTypeConfiguration<>'dan türemiş tüm sınıflar için geçerlidir.
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

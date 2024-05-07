@@ -23,6 +23,5 @@ namespace PersonalWebSiteMVC.Entity.ViewModels.Users
         public int? ImageId { get; set; }
         public string? Title { get; set; }
         public string? Job { get; set; }
-        public bool? Authority { get; set; }
     }
 }

@@ -1,14 +1,12 @@
-﻿using PersonalWebSiteMVC.Core.Entities;
+﻿using Microsoft.AspNetCore.Identity;
+using PersonalWebSiteMVC.Core.Entities;
 
 namespace PersonalWebSiteMVC.Entity.Entities
 {
-    public class User: EntityBase
+    public class AppUser: IdentityUser<int>, IEntityBase
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Email { get; set; }
-        public string? Phone { get; set; }
-        public string Password { get; set; }
         public DateTime? Birthday { get; set; }
         public string? Website { get; set; }
         public string? City { get; set; }
@@ -19,6 +17,5 @@ namespace PersonalWebSiteMVC.Entity.Entities
         public int? ImageId { get; set; }
         public string? Title { get; set; }
         public string? Job { get; set; }
-        public bool? Authority { get; set; }
     }
 }

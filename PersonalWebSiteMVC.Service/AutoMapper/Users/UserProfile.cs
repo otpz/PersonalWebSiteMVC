@@ -8,9 +8,9 @@ namespace PersonalWebSiteMVC.Service.AutoMapper.Users
     {
         public UserProfile()
         {
-            CreateMap<User, UserViewModel>().ReverseMap();
-            CreateMap<User, UserLoginViewModel>().ReverseMap();
-            CreateMap<User, UserRegisterViewModel>().ReverseMap();
+            CreateMap<AppUser, UserViewModel>().ReverseMap();
+            CreateMap<AppUser, UserLoginViewModel>().ReverseMap();
+            CreateMap<AppUser, UserRegisterViewModel>().ReverseMap();
         }
     }
 }
