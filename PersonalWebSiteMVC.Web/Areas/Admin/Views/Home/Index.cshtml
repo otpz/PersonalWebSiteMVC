@@ -1,0 +1,14 @@
+﻿@model List<User>
+@{
+    ViewBag.Title = "Admin Home";
+}
+
+
+@foreach (var user in Model)
+{
+    <div>
+        <span>@user.FirstName</span>
+        <span>@user.LastName</span> <br />
+        <span>@user.Address</span>
+    </div>
+}
