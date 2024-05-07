@@ -12,6 +12,7 @@ namespace PersonalWebSiteMVC.Service.Extensions
             var assembly = Assembly.GetExecutingAssembly();
 
             services.AddScoped<IUserService, UserService>();
+            services.AddAutoMapper(assembly);
 
             return services;
         }

@@ -1,5 +1,4 @@
 ﻿using PersonalWebSiteMVC.Core.Entities;
-
 namespace PersonalWebSiteMVC.Entity.Entities
 {
     public class Talent : EntityBase

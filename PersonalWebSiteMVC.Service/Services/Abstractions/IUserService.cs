@@ -1,9 +1,9 @@
-﻿using PersonalWebSiteMVC.Entity.Entities;
+﻿using PersonalWebSiteMVC.Entity.ViewModels.Users;
 
 namespace PersonalWebSiteMVC.Service.Services.Abstractions
 {
     public interface IUserService
     {
-        Task<List<User>> GetAllUserAsync();
+        Task<List<UserViewModel>> GetAllUserAsync();
     }
 }
