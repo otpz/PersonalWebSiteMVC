@@ -1,10 +1,13 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using PersonalWebSiteMVC.Data.UnitOfWorks;
 using PersonalWebSiteMVC.Entity.Entities;
 using PersonalWebSiteMVC.Entity.Enums;
 using PersonalWebSiteMVC.Entity.ViewModels.Talents;
+using PersonalWebSiteMVC.Service.Extensions;
 using PersonalWebSiteMVC.Service.Helpers.Images;
 using PersonalWebSiteMVC.Service.Services.Abstractions;
+using System.Security.Claims;
 
 namespace PersonalWebSiteMVC.Service.Services.Concretes
 {
@@ -13,12 +16,16 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
         private readonly IImageHelper imageHelper;
+        private readonly IHttpContextAccessor httpContextAccessor;
+        private readonly ClaimsPrincipal user;
 
-        public TalentService(IUnitOfWork unitOfWork, IMapper mapper, IImageHelper imageHelper)
+        public TalentService(IUnitOfWork unitOfWork, IMapper mapper, IImageHelper imageHelper, IHttpContextAccessor httpContextAccessor)
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
             this.imageHelper = imageHelper;
+            this.httpContextAccessor = httpContextAccessor;
+            user = httpContextAccessor.HttpContext.User;
         }
 
         public async Task<List<TalentViewModel>> GetAllTalentsWithImageAsync()
@@ -30,6 +37,9 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
 
         public async Task<string> CreateTalentAsync(TalentAddViewModel talentAddViewModel)
         {
+            //int userId = user.GetLoggedInUserId();
+            //string userEmail = user.GetLoggedInEmail();
+
             var imageUpload = await imageHelper.Upload(talentAddViewModel.Name, talentAddViewModel.Photo, ImageType.Post);
             
             var image = new Image
@@ -45,7 +55,7 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
             {
                 Name = talentAddViewModel.Name,
                 Progress = talentAddViewModel.Progress,
-                ImageId = image.Id
+                ImageId = image.Id,
             };
 
             await unitOfWork.GetRepository<Talent>().AddAsync(talent);

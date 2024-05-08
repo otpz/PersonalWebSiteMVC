@@ -13,7 +13,7 @@ namespace PersonalWebSiteMVC.Entity.Entities
         public string? Address { get; set; }
         public string? Degree { get; set; }
         public string? Description { get; set; }
-        public Image? Image { get; set; }
+        public Image Image { get; set; }
         public int? ImageId { get; set; }
         public string? Title { get; set; }
         public string? Job { get; set; }

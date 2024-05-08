@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using PersonalWebSiteMVC.Service.FluentValidations;
 using PersonalWebSiteMVC.Service.Helpers.Images;
@@ -18,9 +19,10 @@ namespace PersonalWebSiteMVC.Service.Extensions
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITalentService, TalentService>();
-
             services.AddScoped<IImageHelper, ImageHelper>();
-            
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddAutoMapper(assembly);
 
             services.AddControllersWithViews().AddFluentValidation(opt =>
