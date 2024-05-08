@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PersonalWebSiteMVC.Entity.Entities;
@@ -13,11 +15,13 @@ namespace PersonalWebSiteMVC.Web.Areas.Admin.Controllers
     {
         private readonly ITalentService talentService;
         private readonly IMapper mapper;
+        private readonly IValidator<TalentAddViewModel> validator;
 
-        public TalentController(ITalentService talentService, IMapper mapper)
+        public TalentController(ITalentService talentService, IMapper mapper, IValidator<TalentAddViewModel> validator)
         {
             this.talentService = talentService;
             this.mapper = mapper;
+            this.validator = validator;
         }
 
         [HttpGet]
@@ -37,7 +41,14 @@ namespace PersonalWebSiteMVC.Web.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(TalentAddViewModel talentAddViewModel)
         {
-            //var map = mapper.Map<Talent>(talentAddViewModel);
+            var result = await validator.ValidateAsync(talentAddViewModel);
+
+            if (!result.IsValid)
+            {
+                result.AddToModelState(this.ModelState);
+                return View();
+            }
+
             await talentService.CreateTalentAsync(talentAddViewModel);
             return RedirectToAction("Index", "Talent", new {Area = "Admin"});
         }
