@@ -28,7 +28,7 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
             return talentMap;
         }
 
-        public async Task CreateTalentAsync(TalentAddViewModel talentAddViewModel)
+        public async Task<string> CreateTalentAsync(TalentAddViewModel talentAddViewModel)
         {
             var imageUpload = await imageHelper.Upload(talentAddViewModel.Name, talentAddViewModel.Photo, ImageType.Post);
             
@@ -50,6 +50,8 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
 
             await unitOfWork.GetRepository<Talent>().AddAsync(talent);
             await unitOfWork.SaveAsync();
+                
+            return talent.Name;
         }
 
         public async Task<string> SafeDeleteTalentAsync(int talentId)

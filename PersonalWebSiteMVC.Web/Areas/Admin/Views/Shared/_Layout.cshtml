@@ -260,6 +260,7 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
+    <script src="~/dash/jquery/jquery.js"></script>
     <script src="~/dash/assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="~/dash/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/dash/assets/vendor/chart.js/chart.umd.js"></script>
@@ -268,7 +269,8 @@
     <script src="~/dash/assets/vendor/simple-datatables/simple-datatables.js"></script>
     <script src="~/dash/assets/vendor/tinymce/tinymce.min.js"></script>
     <script src="~/dash/assets/vendor/php-email-form/validate.js"></script>
-    @* @await RenderSectionAsync("Scripts", false); *@
+    @await RenderSectionAsync("Scripts", false);
+    @await Component.InvokeAsync("NToastNotify");
     <!-- Template Main JS File -->
     <script src="~/dash/assets/js/main.js"></script>
 

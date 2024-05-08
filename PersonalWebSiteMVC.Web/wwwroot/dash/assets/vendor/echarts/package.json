@@ -1,3 +1,5 @@
 {
-    "type": "commonjs"
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
 }

@@ -8,7 +8,7 @@ namespace PersonalWebSiteMVC.Web.Areas.Admin.Controllers
     public class UserController : Controller
     {
         [HttpGet]
-        public IActionResult Update()
+        public IActionResult Profile()
         {
             return View();
         }
