@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PersonalWebSiteMVC.Entity.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PersonalWebSiteMVC.Data.Mappings
 {

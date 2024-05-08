@@ -1,4 +1,7 @@
-﻿namespace PersonalWebSiteMVC.Core.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace PersonalWebSiteMVC.Core.Entities
 {
     public abstract class EntityBase : IEntityBase
     {

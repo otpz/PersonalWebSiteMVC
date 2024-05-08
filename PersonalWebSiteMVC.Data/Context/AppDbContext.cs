@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PersonalWebSiteMVC.Entity.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection;
 
 namespace PersonalWebSiteMVC.Data.Context
@@ -26,13 +27,16 @@ namespace PersonalWebSiteMVC.Data.Context
         public DbSet<Service> Services { get; set; }
         public DbSet<Summary> Summaries { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
-        public DbSet<AppUser> Users { get; set; }
+        //public DbSet<AppUser> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             // Tüm mappingler için yapılan config'leri uygula | IEntityTypeConfiguration<>'dan türemiş tüm sınıflar için geçerlidir.
+
+            //modelBuilder.
+
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
