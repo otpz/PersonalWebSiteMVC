@@ -1,37 +1,37 @@
 ﻿using FluentValidation;
-using PersonalWebSiteMVC.Entity.ViewModels.Educations;
+using PersonalWebSiteMVC.Entity.ViewModels.Experiences;
 
 namespace PersonalWebSiteMVC.Service.FluentValidations
 {
-    public class EducationValidators : AbstractValidator<EducationAddViewModel>
+    public class ExperienceValidators: AbstractValidator<ExperienceAddViewModel>
     {
-        public EducationValidators()
+        public ExperienceValidators()
         {
             RuleFor(x => x.Title)
                  .NotEmpty()
                  .MinimumLength(1)
                  .NotNull()
                  .MaximumLength(50)
-                 .WithName("Eğitim Başlığı");
+                 .WithName("Deneyim Başlığı");
 
             RuleFor(x => x.Year)
                 .NotEmpty()
                 .MinimumLength(4)
                 .NotNull()
-                .WithName("Eğitim Yılları");
+                .WithName("Deneyim Yılları");
 
             RuleFor(x => x.Address)
                 .NotEmpty()
                 .MinimumLength(4)
                 .NotNull()
-                .WithName("Eğitim Yeri");
+                .WithName("Deneyim Yeri");
 
             RuleFor(x => x.Description)
                 .NotEmpty()
                 .MinimumLength(10)
                 .MaximumLength(600)
                 .NotNull()
-                .WithName("Eğitim Açıklaması");
+                .WithName("Deneyim Açıklaması");
         }
     }
 }

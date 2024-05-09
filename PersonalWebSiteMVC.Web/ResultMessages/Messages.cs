@@ -35,6 +35,18 @@
                 return $"{educationTitle} başlıklı eğitim başarıyla silinmiştir.";
             }
         }
+        public static class Experience
+        {
+            public static string Add(string experienceTitle)
+            {
+                return $"{experienceTitle} başlıklı deneyim başarıyla eklenmiştir.";
+            }
+
+            public static string Delete(string experienceTitle)
+            {
+                return $"{experienceTitle} başlıklı deneyim başarıyla silinmiştir.";
+            }
+        }
 
     }
 }

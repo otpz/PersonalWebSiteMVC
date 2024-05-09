@@ -22,6 +22,7 @@ namespace PersonalWebSiteMVC.Service.Extensions
             services.AddScoped<IImageHelper, ImageHelper>();
             services.AddScoped<ISummaryService, SummaryService>();
             services.AddScoped<IEducationService, EducationService>();
+            services.AddScoped<IExperienceService, ExperienceService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

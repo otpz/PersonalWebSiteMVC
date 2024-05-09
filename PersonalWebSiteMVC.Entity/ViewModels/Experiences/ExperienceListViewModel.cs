@@ -1,6 +1,6 @@
-﻿namespace PersonalWebSiteMVC.Entity.ViewModels.Educations
+﻿namespace PersonalWebSiteMVC.Entity.ViewModels.Experiences
 {
-    public class EducationListViewModel
+    public class ExperienceListViewModel
     {
         public int Id { get; set; }
         public string Title { get; set; }
