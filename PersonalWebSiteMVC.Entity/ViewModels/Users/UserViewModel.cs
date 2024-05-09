@@ -22,7 +22,6 @@ namespace PersonalWebSiteMVC.Entity.ViewModels.Users
         public string? Description { get; set; }
         public Image Image { get; set; }
         public string? Title { get; set; }
-        public string? Job { get; set; }
         public IFormFile? Photo { get; set; }
     }
 }

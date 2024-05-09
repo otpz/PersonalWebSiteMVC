@@ -56,7 +56,6 @@ namespace PersonalWebSiteMVC.Data.Mappings
                 PhoneNumberConfirmed = true,
                 EmailConfirmed = true,
                 SecurityStamp = "1",
-                Job = "Software Engineer",
                 Address = "Atatürk Mah. Uşak Merkez",
                 Birthday = new DateTime(2000, 03, 10),
                 City = "Uşak",
