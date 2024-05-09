@@ -1,8 +1,6 @@
-﻿using PersonalWebSiteMVC.Core.Entities;
-
-namespace PersonalWebSiteMVC.Entity.Entities
+﻿namespace PersonalWebSiteMVC.Entity.ViewModels.Educations
 {
-    public class Experience: EntityBase
+    public class EducationAddViewModel
     {
         public string Title { get; set; }
         public string Year { get; set; }

@@ -15,5 +15,26 @@
             }
         }
 
+        public static class Summary
+        {
+            public static string Update(string talentName)
+            {
+                return $"{talentName} başlıklı özet başarıyla güncellenmiştir.";
+            }
+        }
+
+        public static class Education
+        {
+            public static string Add(string educationTitle)
+            {
+                return $"{educationTitle} başlıklı eğitim başarıyla eklenmiştir.";
+            }
+
+            public static string Delete(string educationTitle)
+            {
+                return $"{educationTitle} başlıklı eğitim başarıyla silinmiştir.";
+            }
+        }
+
     }
 }

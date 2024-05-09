@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PersonalWebSiteMVC.Data.Context;
 
@@ -11,9 +12,11 @@ using PersonalWebSiteMVC.Data.Context;
 namespace PersonalWebSiteMVC.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240509091055_ForSummary")]
+    partial class ForSummary
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -208,7 +211,7 @@ namespace PersonalWebSiteMVC.Data.Migrations
                             Address = "Atatürk Mah. Uşak Merkez",
                             Birthday = new DateTime(2000, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             City = "Uşak",
-                            ConcurrencyStamp = "875123e1-2ba0-4552-82ce-36b6ad51370c",
+                            ConcurrencyStamp = "65c78b7c-e991-4013-a67e-22a4c14e5305",
                             Degree = "Bachelor of Engineering",
                             Description = "Electrical Electronics Engineering & Software Engineering",
                             Email = "osmantopuz98@gmail.com",
@@ -218,7 +221,7 @@ namespace PersonalWebSiteMVC.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "OSMANTOPUZ98@GMAIL.COM",
                             NormalizedUserName = "OSMANTOPUZ98@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOP8aKk2kNuUor7+0HJH3wPkzMiI65Mqdta5jPx3YkwHwXcCnwEGP6mUEQeSwIyWxQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEE6plfn+R3lMBt+DxMX+R8g2mzsX7JeCm5zIlyExw8PUfTJHMCCDudEP64aOeICQoQ==",
                             PhoneNumber = "05555555555",
                             PhoneNumberConfirmed = true,
                             SecurityStamp = "1",
@@ -409,10 +412,6 @@ namespace PersonalWebSiteMVC.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -478,7 +477,7 @@ namespace PersonalWebSiteMVC.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 5, 9, 16, 42, 28, 130, DateTimeKind.Local).AddTicks(8568),
+                            CreatedDate = new DateTime(2024, 5, 9, 12, 10, 54, 612, DateTimeKind.Local).AddTicks(5771),
                             FileName = "images/ofis-araclari",
                             FileType = "jpg",
                             IsDeleted = false
@@ -486,7 +485,7 @@ namespace PersonalWebSiteMVC.Data.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 5, 9, 16, 42, 28, 130, DateTimeKind.Local).AddTicks(8584),
+                            CreatedDate = new DateTime(2024, 5, 9, 12, 10, 54, 612, DateTimeKind.Local).AddTicks(5786),
                             FileName = "images/vs-code",
                             FileType = "jpg",
                             IsDeleted = false
@@ -494,7 +493,7 @@ namespace PersonalWebSiteMVC.Data.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 5, 9, 16, 42, 28, 130, DateTimeKind.Local).AddTicks(8586),
+                            CreatedDate = new DateTime(2024, 5, 9, 12, 10, 54, 612, DateTimeKind.Local).AddTicks(5787),
                             FileName = "images/linked-in",
                             FileType = "png",
                             IsDeleted = false
@@ -614,7 +613,7 @@ namespace PersonalWebSiteMVC.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 5, 9, 16, 42, 28, 131, DateTimeKind.Local).AddTicks(8881),
+                            CreatedDate = new DateTime(2024, 5, 9, 12, 10, 54, 613, DateTimeKind.Local).AddTicks(5950),
                             ImageId = 3,
                             IsDeleted = false,
                             Title = "LinkedIn",
@@ -708,7 +707,7 @@ namespace PersonalWebSiteMVC.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 5, 9, 16, 42, 28, 132, DateTimeKind.Local).AddTicks(363),
+                            CreatedDate = new DateTime(2024, 5, 9, 12, 10, 54, 613, DateTimeKind.Local).AddTicks(7432),
                             ImageId = 1,
                             IsDeleted = false,
                             Name = "Ofis Araçları",
@@ -717,7 +716,7 @@ namespace PersonalWebSiteMVC.Data.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 5, 9, 16, 42, 28, 132, DateTimeKind.Local).AddTicks(366),
+                            CreatedDate = new DateTime(2024, 5, 9, 12, 10, 54, 613, DateTimeKind.Local).AddTicks(7435),
                             ImageId = 2,
                             IsDeleted = false,
                             Name = "VS Code",
