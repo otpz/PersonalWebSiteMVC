@@ -78,5 +78,19 @@
             }
         }
 
+        public static class SocialMedia
+        {
+            public static string Add(string socialMediaTitle)
+            {
+                return $"{socialMediaTitle} başlıklı sosyal medya başarıyla eklenmiştir.";
+            }
+
+            public static string Delete(string socialMediaTitle)
+            {
+                return $"{socialMediaTitle} başlıklı sosyal medya başarıyla silinmiştir.";
+            }
+        }
+
+
     }
 }

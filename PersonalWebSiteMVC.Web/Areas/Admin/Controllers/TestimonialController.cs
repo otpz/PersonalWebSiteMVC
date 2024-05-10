@@ -32,6 +32,12 @@ namespace PersonalWebSiteMVC.Web.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Add(Testimonial testimonial)
         {
             var validationResult = await validator.ValidateAsync(testimonial);
@@ -45,7 +51,7 @@ namespace PersonalWebSiteMVC.Web.Areas.Admin.Controllers
 
             var testimonialName = await testimonialService.CreateTestimonialAsync(testimonial);
             toastNotification.AddSuccessToastMessage(Messages.Testimonial.Add(testimonialName), new ToastrOptions { Title = "Başarılı" });
-            return RedirectToAction("Index", "Testimonials", new { Area = "Admin" });
+            return RedirectToAction("Index", "Testimonial", new { Area = "Admin" });
         }
 
         [HttpGet]
@@ -53,7 +59,7 @@ namespace PersonalWebSiteMVC.Web.Areas.Admin.Controllers
         {
             var testimonialName = await testimonialService.SafeDeleteTestimonialAsync(testimonialId);
             toastNotification.AddSuccessToastMessage(Messages.Testimonial.Delete(testimonialName), new ToastrOptions { Title = "Başarılı" });
-            return RedirectToAction("Index", "Testimonials", new { Area = "Admin" });
+            return RedirectToAction("Index", "Testimonial", new { Area = "Admin" });
         }
 
     }

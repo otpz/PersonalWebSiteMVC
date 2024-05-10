@@ -1,9 +1,10 @@
-﻿using PersonalWebSiteMVC.Core.Entities;
+﻿using PersonalWebSiteMVC.Entity.Entities;
 
-namespace PersonalWebSiteMVC.Entity.Entities
+namespace PersonalWebSiteMVC.Entity.ViewModels.SocialMedias
 {
-    public class SocialMedia: EntityBase
+    public class SocialMediaViewModel
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }
         public int? ImageId { get; set; }

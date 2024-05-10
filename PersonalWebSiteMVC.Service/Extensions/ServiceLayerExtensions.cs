@@ -25,6 +25,7 @@ namespace PersonalWebSiteMVC.Service.Extensions
             services.AddScoped<IExperienceService, ExperienceService>();
             services.AddScoped<IPortfolioService, PortfolioService>();
             services.AddScoped<ITestimonialService, TestimonialService>();
+            services.AddScoped<ISocialMediaService, SocialMediaService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

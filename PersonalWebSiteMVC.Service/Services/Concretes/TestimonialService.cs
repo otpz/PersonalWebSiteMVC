@@ -13,7 +13,7 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
         }
         public async Task<List<Testimonial>> GetAllTestimonialsAsync()
         {
-            var testimonials = await unitOfWork.GetRepository<Testimonial>().GetAllAsync();
+            var testimonials = await unitOfWork.GetRepository<Testimonial>().GetAllAsync(x => !x.IsDeleted);
 
             return testimonials;
         }
