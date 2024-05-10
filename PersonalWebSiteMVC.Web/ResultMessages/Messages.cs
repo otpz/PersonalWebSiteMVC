@@ -65,5 +65,18 @@
             }
         }
 
+        public static class Testimonial
+        {
+            public static string Add(string testimonialName)
+            {
+                return $"{testimonialName} isimli referans başarıyla eklenmiştir.";
+            }
+
+            public static string Delete(string testimonialName)
+            {
+                return $"{testimonialName} isimli referans başarıyla silinmiştir.";
+            }
+        }
+
     }
 }

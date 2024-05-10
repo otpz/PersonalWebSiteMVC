@@ -88,7 +88,7 @@ namespace PersonalWebSiteMVC.Web.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int portfolioId)
         {
             string portfolioTitle = await portfolioService.SafeDeletePortfolioAsync(portfolioId);
-            toastNotification.AddSuccessToastMessage(portfolioTitle, new ToastrOptions { Title = "Başarılı" });
+            toastNotification.AddSuccessToastMessage(Messages.Portfolio.Delete(portfolioTitle), new ToastrOptions { Title = "Başarılı" });
             return RedirectToAction("Index", "Portfolio", new { Area = "Admin" });
         }
     }
