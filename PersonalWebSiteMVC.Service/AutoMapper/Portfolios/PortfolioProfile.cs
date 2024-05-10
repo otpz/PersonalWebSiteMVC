@@ -10,6 +10,8 @@ namespace PersonalWebSiteMVC.Service.AutoMapper.Portfolios
         {
             CreateMap<Portfolio, PorfolioViewModel>().ReverseMap();
             CreateMap<Portfolio, PortfolioAddViewModel>().ReverseMap();
+            CreateMap<Portfolio, PortfolioUpdateViewModel>().ReverseMap();
+            CreateMap<PortfolioUpdateViewModel, PortfolioAddViewModel>().ReverseMap();
         }
     }
 }

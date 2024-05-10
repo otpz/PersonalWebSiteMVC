@@ -48,5 +48,22 @@
             }
         }
 
+        public static class Portfolio
+        {
+            public static string Add(string portfolioTitle)
+            {
+                return $"{portfolioTitle} başlıklı portfolyo başarıyla eklenmiştir.";
+            }
+            public static string Update(string portfolioTitle)
+            {
+                return $"{portfolioTitle} başlıklı portfolyo başarıyla güncellenmiştir.";
+            }
+
+            public static string Delete(string portfolioTitle)
+            {
+                return $"{portfolioTitle} başlıklı portfolyo başarıyla silinmiştir.";
+            }
+        }
+
     }
 }

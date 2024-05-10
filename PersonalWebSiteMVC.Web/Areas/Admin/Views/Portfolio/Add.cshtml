@@ -1,0 +1,62 @@
+﻿@model PortfolioAddViewModel
+@{
+    ViewBag.Title = "Admin | Portfolyo Ekle ";
+}
+
+<main id="main" class="main" style="min-height: 550px;">
+    <div class="pagetitle">
+        <h1>Portfolyolar</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Anasayfa</a></li>
+                <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Portfolio" asp-action="Index">Portfolyolar</a></li>
+                <li class="breadcrumb-item active">Portfolyo Ekle</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Portfolyo Ekleyin</h5>
+                        <!-- General Form Elements -->
+                        <form asp-area="Admin" asp-controller="Portfolio" asp-action="Add" method="post" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly"></div>
+                            <div class="row mb-3">
+                                <label asp-for="Title" class="col-sm-2 col-form-label">Portfolyo Adı</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="Title" name="Title" type="text" class="form-control">
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label asp-for="Description" class="col-sm-2 col-form-label">Portfolyo Açıklaması</label>
+                                <div class="col-sm-10">
+                                    <textarea asp-for="Description" name="Description" type="text" class="form-control">
+                                    </textarea>
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label asp-for="Photo" class="col-sm-2 col-form-label">Resim Ekle</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="Photo" name="Photo" accept="image/*" class="form-control" type="file" id="formFile">
+                                    <span asp-validation-for="Photo" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-sm-10">
+                                    <button type="submit" class="btn btn-primary">Portfolyoyu Ekle</button>
+                                </div>
+                            </div>
+                        </form><!-- End General Form Elements -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
