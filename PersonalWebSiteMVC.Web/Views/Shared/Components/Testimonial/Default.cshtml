@@ -1,0 +1,16 @@
+﻿@model List<Testimonial>
+
+@foreach (var testimonial in Model)
+{
+    <div class="swiper-slide">
+        <div class="testimonial-item" data-aos="fade-up">
+            <p style="min-height:200px;">
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                @testimonial.Message
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <h3>@testimonial.FirstName @testimonial.LastName</h3>
+            <h4>@testimonial.Job</h4>
+        </div>
+    </div>
+}

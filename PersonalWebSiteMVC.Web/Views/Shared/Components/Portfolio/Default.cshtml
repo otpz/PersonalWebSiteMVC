@@ -1,0 +1,14 @@
+﻿@model List<PorfolioViewModel>
+
+
+@foreach(var portfolio in Model)
+{
+    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="portfolio-wrap">
+            <img src="~/images/@portfolio.Image.FileName" alt="@portfolio.Title" class="img-fluid">
+            <div class="portfolio-links">
+                <a href="~/images/@portfolio.Image.FileName" data-gallery="portfolioGallery" class="portfolio-lightbox" title="@portfolio.Description"><i class="bx bx-plus"></i></a>
+            </div>
+        </div>
+    </div>
+}
