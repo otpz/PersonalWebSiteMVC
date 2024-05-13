@@ -1,0 +1,9 @@
+﻿@model List<SocialMediaViewModel>
+
+<div class="social-links mt-1 text-center">
+    @foreach (var socialMedia in Model)
+    {
+        var lowerName = socialMedia.Title.ToLower();
+        <a href="@socialMedia.Url" class="@lowerName"><i class="bx bxl-@lowerName"></i></a>
+    }
+</div>

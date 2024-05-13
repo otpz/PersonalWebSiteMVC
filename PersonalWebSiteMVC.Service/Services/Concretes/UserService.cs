@@ -57,6 +57,14 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
             return map;
         }
 
+        public async Task<UserViewModel> GetFrontProfile()
+        {
+            var user = await unitOfWork.GetRepository<AppUser>().GetAsync(x => x.Id == 1, i => i.Image);
+            var map = mapper.Map<UserViewModel>(user);
+            return map;
+        }
+
+
         private async Task<int> UploadImageForUser(UserViewModel userViewModel)
         {
             var imageUpload = await imageHelper.Upload($"{userViewModel.FirstName} {userViewModel.LastName}", userViewModel.Photo, ImageType.User);

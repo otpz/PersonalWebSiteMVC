@@ -8,5 +8,6 @@ namespace PersonalWebSiteMVC.Service.Services.Abstractions
         Task<UserViewModel> GetFirstUserAsync(int id);
         Task<UserViewModel> GetUserProfile();
         Task<bool> UpdateUserProfileAsync(UserViewModel userViewModel);
+        Task<UserViewModel> GetFrontProfile();
     }
 }

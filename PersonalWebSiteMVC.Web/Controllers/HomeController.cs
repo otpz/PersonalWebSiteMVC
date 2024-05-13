@@ -18,7 +18,7 @@ namespace PersonalWebSiteMVC.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var users = await userService.GetAllUserAsync();
+            var users = await userService.GetFrontProfile();
 
             return View(users);
         }

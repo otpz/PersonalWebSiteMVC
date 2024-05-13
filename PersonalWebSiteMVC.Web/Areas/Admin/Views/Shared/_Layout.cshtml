@@ -116,7 +116,7 @@
 
                 </li><!-- End Notification Nav -->
 
-                <li class="nav-item dropdown pe-3">
+                @* <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0 user-select-none" data-bs-toggle="dropdown">
                         <img src="~/dash/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
@@ -147,7 +147,9 @@
                             </a>
                         </li>
                     </ul><!-- End Profile Dropdown Items -->
-                </li><!-- End Profile Nav -->
+                </li><!-- End Profile Nav --> *@
+
+               @await Component.InvokeAsync("DashboardHeader")
 
             </ul>
         </nav><!-- End Icons Navigation -->
