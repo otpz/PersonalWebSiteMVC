@@ -16,7 +16,6 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
         public async Task<Summary> GetFirstSummaryAsync()
         {
             var summary = await unitOfWork.GetRepository<Summary>().GetByIdAsync(1);
-
             return summary;
         }
 
