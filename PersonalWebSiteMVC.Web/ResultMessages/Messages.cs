@@ -91,6 +91,17 @@
             }
         }
 
+        public static class Contact
+        {
+            public static string Add(string contactSubject)
+            {
+                return $"{contactSubject} başlıklı iletişim formu başarıyla gönderilmiştir.";
+            }
 
+            public static string Delete(string contactSubject)
+            {
+                return $"{contactSubject} başlıklı iletişim formu başarıyla gönderilmiştir.";
+            }
+        }
     }
 }

@@ -23,5 +23,29 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
             var contactsMap = mapper.Map<List<ContactViewModel>>(contacts);
             return contactsMap;
         }
+
+        public async Task<string> CreateContactAsync(ContactViewModel contactViewModel)
+        {
+            var map = mapper.Map<Contact>(contactViewModel);
+            map.CreatedDate = DateTime.Now;
+            await unitOfWork.GetRepository<Contact>().AddAsync(map);
+            await unitOfWork.SaveAsync();
+            return contactViewModel.Subject;
+        }
+
+        public async Task<string> SafeDeleteContactAsync(int contactId)
+        {
+            var contact = await unitOfWork.GetRepository<Contact>().GetByIdAsync(contactId);
+
+            contact.IsDeleted = true;
+            contact.DeletedDate = DateTime.Now;
+            contact.DeletedBy = "undefined";
+
+            await unitOfWork.GetRepository<Contact>().UpdateAsync(contact);
+            await unitOfWork.SaveAsync();
+
+            return contact.Subject;
+        }
+
     }
 }

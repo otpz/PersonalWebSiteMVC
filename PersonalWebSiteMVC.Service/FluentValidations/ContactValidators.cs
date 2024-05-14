@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
 using PersonalWebSiteMVC.Entity.Entities;
+using PersonalWebSiteMVC.Entity.ViewModels.Contacts;
 
 namespace PersonalWebSiteMVC.Service.FluentValidations
 {
-    public class ContactValidators : AbstractValidator<Contact>
+    public class ContactValidators : AbstractValidator<ContactViewModel>
     {
         public ContactValidators()
         {
