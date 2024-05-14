@@ -1,4 +1,4 @@
-﻿@model List<ContactViewModel>
+﻿@model List<Contact>
 @{
     ViewBag.Title = "Admin | İletişimler";
 }
@@ -33,16 +33,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var experience in Model)
+                                @foreach (var contact in Model)
                                 {
                                     <tr class="align-middle">
-                                        <td scope="row">@experience.FullName</td>
-                                        <td scope="row">@experience.Subject</td>
-                                        <td scope="row">@experience.Message</td>
-                                        <td scope="row">@experience.Email</td>
-                                        <td scope="row">@experience.CreatedDate</td>
+                                        <td scope="row">@contact.FullName</td>
+                                        <td scope="row">@contact.Subject</td>
+                                        <td scope="row">@contact.Message</td>
+                                        <td scope="row">@contact.Email</td>
+                                        <td scope="row">@contact.CreatedDate</td>
                                         <td scope="row">
-                                            <a asp-area="Admin" asp-controller="Contact" asp-action="Delete" asp-route-experienceId="@experience.Id" class="btn btn-danger">Sil</a>
+                                            <a asp-area="Admin" asp-controller="Contact" asp-action="Delete" asp-route-contactId="@contact.Id" class="btn btn-danger">Sil</a>
                                         </td>
                                     </tr>
                                 }

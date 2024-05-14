@@ -5,7 +5,7 @@ namespace PersonalWebSiteMVC.Service.Services.Abstractions
 {
     public interface IContactService
     {
-        Task<List<ContactViewModel>> GetAllContactsAsync();
+        Task<List<Contact>> GetAllContactsAsync();
         Task<string> CreateContactAsync(ContactViewModel contactViewModel);
         Task<string> SafeDeleteContactAsync(int contactId);
     }

@@ -17,11 +17,10 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
             this.mapper = mapper;
         }
 
-        public async Task<List<ContactViewModel>> GetAllContactsAsync()
+        public async Task<List<Contact>> GetAllContactsAsync()
         {
-            var contacts = await unitOfWork.GetRepository<Contact>().GetAllAsync();
-            var contactsMap = mapper.Map<List<ContactViewModel>>(contacts);
-            return contactsMap;
+            var contacts = await unitOfWork.GetRepository<Contact>().GetAllAsync(x => !x.IsDeleted);
+            return contacts;
         }
 
         public async Task<string> CreateContactAsync(ContactViewModel contactViewModel)
