@@ -24,6 +24,13 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
             return educationsListViewModelMap;
         }
 
+        public async Task<EducationUpdateViewModel> GetEducationById(int educationId)
+        {
+            var education = await unitOfWork.GetRepository<Education>().GetByIdAsync(educationId);
+            var map = mapper.Map<EducationUpdateViewModel>(education);
+            return map;
+        }
+
         public async Task<string> CreateEducationAsync(EducationAddViewModel educationAddViewModel)
         {
             var map = mapper.Map<Education>(educationAddViewModel);
@@ -32,6 +39,18 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
             await unitOfWork.SaveAsync();
 
             return map.Title;
+        }
+
+        public async Task<string> UpdateEducationAsync(EducationUpdateViewModel educationUpdateViewModel)
+        {
+            var education = await unitOfWork.GetRepository<Education>().GetByIdAsync(educationUpdateViewModel.Id);
+
+            var educationUpdateMap = mapper.Map(educationUpdateViewModel, education);
+
+            await unitOfWork.GetRepository<Education>().UpdateAsync(educationUpdateMap);
+            await unitOfWork.SaveAsync();
+
+            return educationUpdateMap.Title;
         }
 
         public async Task<string> SafeDeleteEducationAsync(int educationId)

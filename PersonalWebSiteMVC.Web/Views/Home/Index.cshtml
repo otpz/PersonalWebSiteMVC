@@ -33,14 +33,6 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Doğum Tarihi:</strong> <span>
-                                        @{
-                                            string originalDateTimeString = Model.Birthday.ToString();
-                                            DateTime dateTime = DateTime.ParseExact(originalDateTimeString, "dd.MM.yyyy HH:mm:ss", null);
-                                            string formattedDateTimeString = dateTime.ToString("dd/MM/yyyy");
-                                        }
-                                        @formattedDateTimeString
-                                </span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>@Model.Website</span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Telefon No:</strong> <span>@Model.PhoneNumber</span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Konum</strong> <span>@Model.City</span></li>
@@ -48,23 +40,12 @@
                         </div>
                         <div class="col-lg-6">
                             <ul>
-                                <li>
-                                    <i class="bi bi-chevron-right"></i> <strong>Yaş:</strong> 
-                                    <span>
-                                        @{
-                                            var age = DateTime.Now - Model.Birthday;
-                                            var years = (int)(age.Value.TotalDays / 365);
-                                        }
-                                        @years
-                                    </span>
-                                </li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Derece:</strong> <span>@Model.Degree</span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>@Model.Email</span></li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Mevcut</span></li>
                             </ul>
                         </div>
                     </div>
-                    <p>@Model.Description</p>
                 </div>
             </div>
         </div>

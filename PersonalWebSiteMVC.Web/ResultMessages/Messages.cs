@@ -29,7 +29,10 @@
             {
                 return $"{educationTitle} başlıklı eğitim başarıyla eklenmiştir.";
             }
-
+            public static string Update(string educationTitle)
+            {
+                return $"{educationTitle} başlıklı eğitim başarıyla güncellenmiştir.";
+            }
             public static string Delete(string educationTitle)
             {
                 return $"{educationTitle} başlıklı eğitim başarıyla silinmiştir.";

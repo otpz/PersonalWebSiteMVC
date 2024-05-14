@@ -15,6 +15,7 @@ namespace PersonalWebSiteMVC.Service.AutoMapper.Educations
         {
             CreateMap<Education, EducationListViewModel>().ReverseMap();
             CreateMap<Education, EducationAddViewModel>().ReverseMap();
+            CreateMap<Education, EducationUpdateViewModel>().ReverseMap();
         }
     }
 }

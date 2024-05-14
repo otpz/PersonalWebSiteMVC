@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using PersonalWebSiteMVC.Entity.ViewModels.Educations;
+using PersonalWebSiteMVC.Entity.Entities;
 
 namespace PersonalWebSiteMVC.Service.FluentValidations
 {
-    public class EducationValidators : AbstractValidator<EducationAddViewModel>
+    public class EducationValidators : AbstractValidator<Education>
     {
         public EducationValidators()
         {

@@ -5,7 +5,7 @@
 <main id="main" class="main" style="min-height: 550px;">
 
     <div class="pagetitle">
-        <h1>Eğitimler</h1>
+        <h1>Eğitim Güncelle</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Anasayfa</a></li>
@@ -44,9 +44,10 @@
                                     <tr class="align-middle">
                                         <td scope="row">@education.Title</td>
                                         <td scope="row">@education.Year</td>
-                                        <td scope="row">@education.Address</td>
+                                        <td class="text-truncate" style="max-width:200px;" scope="row">@education.Address</td>
                                         <td scope="row">@education.CreatedDate</td>
                                         <td scope="row">
+                                            <a asp-area="Admin" asp-controller="Education" asp-action="Update" asp-route-educationId="@education.Id" class="btn btn-success">Güncelle</a>
                                             <a asp-area="Admin" asp-controller="Education" asp-action="Delete" asp-route-educationId="@education.Id" class="btn btn-danger">Sil</a>
                                         </td>
                                     </tr>
