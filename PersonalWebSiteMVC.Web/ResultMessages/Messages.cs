@@ -44,7 +44,10 @@
             {
                 return $"{experienceTitle} başlıklı deneyim başarıyla eklenmiştir.";
             }
-
+            public static string Update(string experienceTitle)
+            {
+                return $"{experienceTitle} başlıklı deneyim başarıyla güncellenmiştir.";
+            }
             public static string Delete(string experienceTitle)
             {
                 return $"{experienceTitle} başlıklı deneyim başarıyla silinmiştir.";

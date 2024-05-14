@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using PersonalWebSiteMVC.Entity.ViewModels.Experiences;
+using PersonalWebSiteMVC.Entity.Entities;
 
 namespace PersonalWebSiteMVC.Service.FluentValidations
 {
-    public class ExperienceValidators: AbstractValidator<ExperienceAddViewModel>
+    public class ExperienceValidators: AbstractValidator<Experience>
     {
         public ExperienceValidators()
         {

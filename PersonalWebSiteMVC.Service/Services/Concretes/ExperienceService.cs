@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using PersonalWebSiteMVC.Data.UnitOfWorks;
 using PersonalWebSiteMVC.Entity.Entities;
+using PersonalWebSiteMVC.Entity.ViewModels.Educations;
 using PersonalWebSiteMVC.Entity.ViewModels.Experiences;
 using PersonalWebSiteMVC.Service.Services.Abstractions;
 
@@ -27,6 +28,13 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
 
         }
 
+        public async Task<ExperienceUpdateViewModel> GetExperienceById(int experienceId)
+        {
+            var expereince = await unitOfWork.GetRepository<Experience>().GetByIdAsync(experienceId);
+            var map = mapper.Map<ExperienceUpdateViewModel>(expereince);
+            return map;
+        }
+
         public async Task<string> CreateExperienceAsync(ExperienceAddViewModel experienceAddViewModel)
         {
             var experienceMap = mapper.Map<Experience>(experienceAddViewModel);
@@ -35,6 +43,18 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
             await unitOfWork.SaveAsync();
 
             return experienceMap.Title;
+        }
+
+        public async Task<string> UpdateExperienceAsync(ExperienceUpdateViewModel experienceUpdateViewModel)
+        {
+            var experience = await unitOfWork.GetRepository<Experience>().GetByIdAsync(experienceUpdateViewModel.Id);
+
+            var experienceUpdateMap = mapper.Map(experienceUpdateViewModel, experience);
+
+            await unitOfWork.GetRepository<Experience>().UpdateAsync(experienceUpdateMap);
+            await unitOfWork.SaveAsync();
+
+            return experienceUpdateMap.Title;
         }
 
         public async Task<string> SafeDeleteExperienceAsync(int experienceId)
@@ -50,6 +70,5 @@ namespace PersonalWebSiteMVC.Service.Services.Concretes
 
             return experience.Title;
         }
-        
     }
 }

@@ -47,6 +47,7 @@
                                         <td scope="row">@experience.Address</td>
                                         <td scope="row">@experience.CreatedDate</td>
                                         <td scope="row">
+                                            <a asp-area="Admin" asp-controller="Experience" asp-action="Update" asp-route-experienceId="@experience.Id" class="btn btn-success">Güncelle</a>
                                             <a asp-area="Admin" asp-controller="Experience" asp-action="Delete" asp-route-experienceId="@experience.Id" class="btn btn-danger">Sil</a>
                                         </td>
                                     </tr>

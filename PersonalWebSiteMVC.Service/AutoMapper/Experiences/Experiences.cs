@@ -10,7 +10,7 @@ namespace PersonalWebSiteMVC.Service.AutoMapper.Experiences
         {
             CreateMap<Experience, ExperienceListViewModel>().ReverseMap();
             CreateMap<Experience, ExperienceAddViewModel>().ReverseMap();
-            CreateMap<Experience, ExperienceAddViewModel>().ReverseMap();
+            CreateMap<Experience, ExperienceUpdateViewModel>().ReverseMap();
         }
     }
 }
